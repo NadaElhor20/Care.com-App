@@ -1,0 +1,79 @@
+<main>
+  <form [formGroup]="addDoctorForm" (submit)="onSubmit()">
+
+    <div class="bg-primary pb-1 pt-1" style="border-radius:15px 15px 0 0 ;">
+      <h6 class="fw-normal text-white" style="text-align: center;">Sign Up</h6>
+    </div>
+    <div class="d-flex justify-content-center">
+      <div><button class="w-20 btn btn-sm btn-primary mt-3" type="submit"><a class="link-dark"
+            href="https://www.facebook.com/"><i class="bi bi-facebook"
+              style="font-size: 20px;color: white;padding:5px;"></i></a>Connect with Facebook </button></div>
+    </div>
+
+    <div class="form-floating p-2">
+      <label for="floatingPassword">Your Name*</label>
+      <input type="text" class="form-control {{ isSubmitted && f['name'].errors ? 'is-invalid' : ''}}"
+        formControlName="name" id="floatingPassword" placeholder="Name">
+      <p *ngIf="isSubmitted && f['name'].errors?.['required']" class="form-text text-danger">
+        This field is mandatory
+      </p>
+      <p *ngIf="isSubmitted && f['name'].errors?.['minlength']" class="form-text text-danger">
+        Name must be at least 4 characters
+      </p>
+    </div>
+    <div class="form-floating p-2">
+      <label for="floatingInput">Email Address*</label>
+      <input type="email" class="form-control {{ isSubmitted && f['email'].errors ? 'is-invalid' : ''}}"
+        formControlName="email" id="floatingInput" placeholder="name@example.com">
+      <p *ngIf="isSubmitted && f['email'].errors?.['required']" class="form-text text-danger">
+        This field is mandatory</p>
+      <p *ngIf="isSubmitted && f['email'].errors?.['minlength']" class="form-text text-danger">
+        Email must be at least 13 characters
+      </p>
+    </div>
+
+    <div class="form-floating p-2">
+      <label for="floatingphone">Mobile Number*</label>
+      <input type="text" class="form-control {{ isSubmitted && f['phone'].errors ? 'is-invalid' : ''}}"
+        formControlName="Mobile Number" id="floatingphone" placeholder="Mobile Number">
+    </div>
+    <p *ngIf="isSubmitted && f['phone'].errors?.['required']" class="form-text text-danger">
+      This field is mandatory</p>
+    <p *ngIf="isSubmitted && f['phone'].errors?.['minlength']" class="form-text text-danger">
+      Mobile Number must be 11 number
+    </p>
+
+    <div class="form-floating p-2">
+      <label for="floatingaddress">Address*</label><br>
+      <input type="text" class="form-control {{ isSubmitted && f['address'].errors ? 'is-invalid' : ''}}"
+        formControlName="address" id="floatingaddress" placeholder="address">
+      <p *ngIf="isSubmitted && f['address'].errors?.['required']" class="form-text text-danger">
+        This field is mandatory</p>
+    </div>
+
+    <div class="form-floating p-2">
+      <label for="floatingaddress">Date of birth*</label>
+      <input type="date" class="form-control" formControlName="Date of birth" id="floatingaddress"
+        placeholder="Date of birth">
+    </div>
+    <div class="form-floating d-flex justify-content-between p-2">
+      <div><label for="floatingaddress">Gender*</label></div>
+      <div><span><input type="radio" formControlName="Gender" id="floatingaddress"
+            name="gender"><label>Male</label></span><span><input type="radio" formControlName="Gender"
+            id="floatingaddress" name="gender"><label>Female</label></span></div>
+    </div>
+    <div class="form-floating p-2">
+      <label for="floatingphone">Password*</label><br>
+      <input type="text" class="form-control {{ isSubmitted && f['password'].errors ? 'is-invalid' : ''}}"
+        formControlName="Password" id="floatingphone" placeholder="Password">
+    </div>
+    <p *ngIf="isSubmitted && f['password'].errors?.['required']" class="form-text text-danger">
+      This field is mandatory</p>
+    <p *ngIf="isSubmitted && f['password'].errors?.['minlength']" class="form-text text-danger">
+      Password Number must be at least 6 characters
+    </p>
+    <div class="d-flex justify-content-center">
+      <div><button class="w-20 btn btn-sm btn-danger mt-3" type="submit">Join Now </button></div>
+    </div><br>
+  </form>
+</main><br>

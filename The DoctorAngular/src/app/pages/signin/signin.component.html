@@ -1,0 +1,28 @@
+
+<main>
+    <form [formGroup]="addDoctorForm" (submit)="onSubmit()">  
+        <div class="bg-primary pb-1 pt-1" style="border-radius:15px 15px 0 0 ;"><h6 class="fw-normal text-white" style="text-align: center;">Log In</h6></div>
+        <div class="form-floating p-2">
+            <label for="floatingInput"> Mobile or Email*</label>
+            <input type="email" class="form-control {{ isSubmitted && f['email'].errors ? 'is-invalid' : ''}}" formControlName="email" id="floatingInput"
+                placeholder="Mobile or Email">
+                <p *ngIf="isSubmitted && f['email'].errors?.['required']"class="form-text text-danger">
+                    This field is mandatory</p>
+                    <p *ngIf="isSubmitted && f['email'].errors?.['minlength']" class="form-text text-danger">
+                        Email must be at least 13 characters
+                    </p>
+        </div>     
+        <div class="form-floating p-2">
+            <label for="floatingaddress">Password*</label>
+            <input type="text" class="form-control {{ isSubmitted && f['password'].errors ? 'is-invalid' : ''}}" formControlName="Password" id="floatingaddress" placeholder="Password">
+            <p *ngIf="isSubmitted && f['password'].errors?.['required']"class="form-text text-danger">
+                This field is mandatory</p>
+                <p *ngIf="isSubmitted && f['password'].errors?.['minlength']" class="form-text text-danger">
+                    Password Number must be at least 6 characters
+                </p>
+        </div>    
+        <div class="d-flex justify-content-center"><div><button class="w-20 btn btn-sm btn-danger mt-3"  type="submit">LOGIN</button></div></div>
+        <div class="d-flex justify-content-center"><div><button class="w-20 btn btn-sm btn-primary mt-3"  type="submit"><a class="link-dark" href="https://www.facebook.com/"><i class="bi bi-facebook" style="font-size: 20px;color: white;padding:5px;"></i></a>Connect with Facebook </button></div></div><br></form></main><br>
+        
+    
+    

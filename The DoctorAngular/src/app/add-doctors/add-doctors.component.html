@@ -1,0 +1,42 @@
+
+<main>
+<form [formGroup]="addDoctorForm" (submit)="onSubmit()">
+
+    <h1 class="h3 mb-3 fw-normal">Add new doctor</h1>
+
+    <div class="form-floating">
+        <label for="floatingPassword">Name:</label>
+        <input type="text" class="form-control {{ isSubmitted && f['name'].errors ? 'is-invalid' : ''}}"
+            formControlName="name" id="floatingPassword" placeholder="Name">
+        <p *ngIf="isSubmitted && f['name'].errors?.['required']"class="form-text text-danger">
+            This field is mandatory
+        </p>
+        <p *ngIf="isSubmitted && f['name'].errors?.['minlength']" class="form-text text-danger">
+            Name must be at least 4 characters
+        </p>
+    </div>
+    <div class="form-floating">
+        <label for="floatingInput">Email address:</label>
+        <input type="email" class="form-control" formControlName="email" id="floatingInput"
+            placeholder="name@example.com">
+    </div>
+    <div class="form-floating">
+        <label for="floatingsps">specialist:</label><br>
+
+        <input type="text" class="form-control" formControlName="sps" id="floatingsps" placeholder="specialist">
+    </div>
+
+    <div class="form-floating">
+        <label for="floatingphone">phone:</label>
+        <input type="text" class="form-control" formControlName="phone" id="floatingphone" placeholder="phone">
+    </div>
+
+    <div class="form-floating">
+        <label for="floatingaddress">address:</label>
+        <input type="text" class="form-control" formControlName="address" id="floatingaddress" placeholder="address">
+    </div>
+    <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Add new</button> 
+    </form>
+</main>
+
+

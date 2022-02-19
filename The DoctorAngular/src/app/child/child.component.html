@@ -1,0 +1,39 @@
+<div class="d-flex flex-column align-items-center">
+  <div class="card mb-3 d-flex justify-content-center" style="max-width: 540px; border-radius: 20px 20px 0 0;">
+    <div class="row g-0 pl-2">
+      <div class="col-md-4  ">
+        <img src="{{obj.im}}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <span class="card-title"><span class="doc">Doctor</span> {{obj.name}}</span>
+          <p class="card-text">{{obj.title}}.</p>
+          <p class="card-text">
+            <ngb-rating [rate]="3"></ngb-rating>
+          </p>
+          <p class="card-text"><small class="text-muted">
+              <fa-icon icon="map-marker-alt"></fa-icon> {{obj.location}}
+            </small></p>
+          <p class="card-text"><small class="text-muted">
+              <fa-icon icon="money-bill-wave"></fa-icon> {{obj.fees}}
+            </small></p>
+          <p class="card-text"><small class="text-muted">
+              <fa-icon icon="user-clock"></fa-icon> {{obj.wt}}
+            </small></p>
+          <p class="card-text"><small class="text-muted">
+              <fa-icon icon="phone"></fa-icon> {{obj.phone}}
+            </small></p>
+          <p class="card-text"><small class="text-muted">
+              <div class="d-flex align-items-baseline">
+                <div><a class="nav-link text-danger" href="#" aria-current="page" [routerLink]="['/doctor',obj.id]"
+                    routerLinkActive="active">show more</a></div>
+                <div>
+                  <app-btn-loading></app-btn-loading>
+                </div>
+              </div>
+            </small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

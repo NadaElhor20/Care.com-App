@@ -1,0 +1,26 @@
+img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    position: absolute;
+    top: 90px;
+    left: 20px;
+  
+}
+.card-title{
+
+font-size: 25px;
+font-weight: bold;
+
+
+}
+.doc{
+
+font-size: 15px;
+font-weight: normal;
+
+
+}
+.card{
+    min-width: 800px
+}

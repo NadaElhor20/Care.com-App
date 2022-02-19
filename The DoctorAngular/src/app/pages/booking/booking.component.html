@@ -1,0 +1,43 @@
+<main>
+  <form [formGroup]="addDoctorForm" (submit)="onSubmit()">
+
+    <div class="bg-primary pb-1 pt-1" style="border-radius:15px 15px 0 0 ;">
+      <h6 class="fw-normal text-white" style="text-align: center;">Booking </h6>
+    </div>
+
+
+    <div class="form-floating p-2">
+      <label for="floatingPassword">Your Name*</label>
+      <input type="text" class="form-control {{ isSubmitted && f['name'].errors ? 'is-invalid' : ''}}"
+        formControlName="name" id="floatingPassword" placeholder="Name">
+      <p *ngIf="isSubmitted && f['name'].errors?.['required']" class="form-text text-danger">
+        This field is mandatory
+      </p>
+      <p *ngIf="isSubmitted && f['name'].errors?.['minlength']" class="form-text text-danger">
+        Name must be at least 4 characters
+      </p>
+    </div>
+    <div class="form-floating p-2">
+      <label for="floatingInput">Email Address*</label>
+      <input type="email" class="form-control {{ isSubmitted && f['email'].errors ? 'is-invalid' : ''}}"
+        formControlName="email" id="floatingInput" placeholder="name@example.com">
+      <p *ngIf="isSubmitted && f['email'].errors?.['required']" class="form-text text-danger">
+        This field is mandatory</p>
+      <p *ngIf="isSubmitted && f['email'].errors?.['minlength']" class="form-text text-danger">
+        Email must be at least 13 characters
+      </p>
+    </div>
+
+    <div class="form-floating p-2">
+      <label for="floatingdate">Appointment*</label>
+      <input type="date" class="form-control {{ isSubmitted && f['date].errors ? 'is-invalid' : ''}}"
+        formControlName="date" id="floatingdate" placeholder="data">
+    </div>
+
+
+
+    <div class="d-flex justify-content-center">
+      <div><button class="w-20 btn btn-sm btn-danger mt-3" type="submit" href="#" aria-current="page" [routerLink]="['/booking-page']" routerLinkActive="active">Send</button></div>
+    </div><br>
+  </form>
+</main><br>
